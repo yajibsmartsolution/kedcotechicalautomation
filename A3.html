@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KEDCO Inventory Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>KEDCO Store</h2>
+      <nav>
+        <ul>
+          <li><i class="fas fa-home"></i> Dashboard</li>
+          <li><i class="fas fa-boxes"></i> Inventory Overview</li>
+          <li><i class="fas fa-file-signature"></i> Material Requests</li>
+          <li><i class="fas fa-clipboard-list"></i> Store Logs</li>
+          <li><i class="fas fa-chart-bar"></i> Reports</li>
+          <li><i class="fas fa-user-cog"></i> User Settings</li>
+        </ul>
+      </nav>
+      <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header>
+        <h1>KEDCO Inventory & Store Management Dashboard</h1>
+      </header>
+
+      <!-- Dashboard Cards -->
+      <section class="dashboard-cards">
+        <div class="card total-items">Total Items: <span id="totalItems">---</span></div>
+        <div class="card low-stock">Low Stock: <span id="lowStock">---</span></div>
+        <div class="card pending-requests">Pending Requests: <span id="pendingRequests">---</span></div>
+      </section>
+
+      <!-- Material Request Form -->
+      <section class="request-section">
+        <h2>Request Materials</h2>
+        <form id="requestForm">
+          <input type="text" id="unit" placeholder="Unit (e.g. O&M)" required />
+          <input type="text" id="material" placeholder="Material Name" required />
+          <input type="number" id="quantity" placeholder="Quantity" required />
+          <button type="submit">Submit Request</button>
+        </form>
+        <div id="requestAlert"></div>
+      </section>
+
+      <!-- Approval Panel -->
+      <section class="approval-section">
+        <h2>Pending Material Requests</h2>
+        <table id="requestTable">
+          <thead>
+            <tr><th>Unit</th><th>Material</th><th>Quantity</th><th>Action</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <!-- Charts Section -->
+      <section class="charts-section">
+        <h2>Inventory Charts</h2>
+        <canvas id="inventoryChart" width="400" height="200"></canvas>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
