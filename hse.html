@@ -865,6 +865,13 @@
                     scales: { y: { beginAtZero: true } }
                 }
             });
+            function logout() {
+    if (confirm('Are you sure you want to log out?')) {
+        localStorage.clear();
+        sessionStorage.clear();
+        window.location.href = "index.html"; // Or "login.html"
+    }
+}
 
             const materialSelect = document.getElementById('material-select');
             const stockMaterialSelect = document.getElementById('stock-material-select');
@@ -1194,4 +1201,5 @@
         }
     </script>
 </body>
+
 </html>
