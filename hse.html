@@ -865,13 +865,6 @@
                     scales: { y: { beginAtZero: true } }
                 }
             });
-            function logout() {
-    if (confirm('Are you sure you want to log out?')) {
-        localStorage.clear();
-        sessionStorage.clear();
-        window.location.href = "index.html"; // Or "login.html"
-    }
-}
 
             const materialSelect = document.getElementById('material-select');
             const stockMaterialSelect = document.getElementById('stock-material-select');
@@ -902,6 +895,13 @@
                     }
                 });
             });
+            function logout() {
+    if (confirm('Are you sure you want to log out?')) {
+        localStorage.clear();
+        sessionStorage.clear();
+        window.location.href = "index.html"; // Or "login.html"
+    }
+}
 
             // Submit new request
             document.getElementById('submit-request').addEventListener('click', function() {
@@ -1095,7 +1095,7 @@
                 tbody.insertAdjacentHTML('beforeend', row);
             });
         }
-
+ 
         function updateRequestsTable() {
             const tbody = document.querySelector('#requests-table tbody');
             tbody.innerHTML = '';
@@ -1201,5 +1201,4 @@
         }
     </script>
 </body>
-
 </html>
